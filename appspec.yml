@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/survey-www/source
+    overwrite: true
+file_exists_behavior: OVERWRITE
+permissions:
+  - object: /var/www/survey-www/source
+    owner: p20921
+    group: p20921
+hooks:
+  AfterInstall:
+    - location: codedeploy/afterInstall.sh
+      timeout: 1200
+      runas: p20921
