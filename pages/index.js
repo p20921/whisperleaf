@@ -1,13 +1,16 @@
+import { Categorys } from 'utils/constants'
+import { getCapitalize } from 'utils'
 import Logo from 'component/Main/Logo'
 import Tab from 'component/Main/Tab'
 import Search from 'component/Main/Search'
 import List from 'component/Main/List'
+import Header from 'component/Header'
 
 export const getParams = (props) => {
     const { category, startpoint, search } = props
 
     return {
-        category: category || 'middle_east',
+        category: category || 'Money',
         startpoint: startpoint || 0,
         search: search || ''
     }
@@ -16,19 +19,23 @@ export const getParams = (props) => {
 function Home(props) {
     const { rows, count, category  } = props
 
+    const title = "Whisperleaf"
+    const description = "Whisperleaf: Your ultimate guide to money management, lifestyle enhancements, effective parenting, delicious food recipes, and health tips. Explore expert advice, practical tips, and resources to enrich your life."
+    const keywords = "Whisperleaf, money management, personal finance, budgeting, saving, investing, lifestyle tips, parenting advice, child care, recipes, cooking tips, healthy eating, health tips, wellness, fitness, mental health, balanced living"
+
     return (
         <>
             <header>
-               
+                <Header title={title} description={description} keywords={keywords} />  
             </header>
             <main>
                 <Logo />
                 <Tab category={category} />
-                <Search />
-                <List rows={rows} count={count} />
+                <Search category={category} />
+                <List category={category} rows={rows} count={count} />
             </main>
             <footer>
-       
+    
             </footer>
         </>
     )
@@ -38,6 +45,17 @@ function Home(props) {
 export const getServerSideProps = async (context) => {
     const { query } = context
     const { startpoint, category, search } = query
+
+    if (category) {
+        if (!Categorys.includes(getCapitalize(category))) {
+            return {
+                redirect: {
+                    destination: '/',
+                    permanent: false,
+                },
+            }
+        }
+    }
 
     const params = getParams({ startpoint, category, search })
 

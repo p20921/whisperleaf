@@ -14,7 +14,7 @@ export default async(req, res) => {
 
 	try {
         const resItem = await itemSlave.findOne({
-            attributes: [ 'item_id', 'subject', 'content', 'love', 'wdate' ],
+            attributes: [ 'item_id', 'subject', 'content', 'love', 'description', 'keywords', 'thumbnail', 'wdate' ],
             where
         })
 

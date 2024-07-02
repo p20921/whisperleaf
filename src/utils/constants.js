@@ -1,0 +1,1 @@
+export const Categorys = [ 'Money', 'Lifestyle', 'Food', 'Health', 'Parenting' ]

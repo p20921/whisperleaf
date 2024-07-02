@@ -1,23 +1,14 @@
 import { useRouter } from 'next/router'
+import oc from 'open-color'
 import Container from '@material-ui/core/Container'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
-import { makeStyles } from '@material-ui/core/styles'
 import withBreakPoints from 'hoc/BreakPoints'
 
-const useStyles = makeStyles(theme => ({
-    buttonBox: {
-        display: 'flex',
-        gap: 5,
-        justifyContent: 'center'
-    }
-}))
 
 function Main1(props) {
     const { breakpoints } = props
     const { xs } = breakpoints
-
-    const classes = useStyles()
 
     const { query, push } = useRouter()
     const { category, startpoint, search } = query
@@ -27,11 +18,22 @@ function Main1(props) {
     }
 
     return (
-        <>
-        <Container style={{ marginBottom: 30, marginTop: 20 }}>
-            <Typography variant={xs ? 'h4' : 'h2'}  style={{ cursor: 'pointer', textAlign: 'center', fontWeight: 'bold' }} onClick={handleClick}>World News</Typography>
+        <Container style={{ marginTop: 50 }}>
+            <Typography 
+                variant={xs ? 'h4' : 'h2'}  
+                style={{ 
+                    cursor: 'pointer', 
+                    textAlign: 'center', 
+                    fontWeight: 'bold',
+                    textShadow: `2px 2px 5px #A8A684`,
+                    color: '#8A8667'
+                }} 
+                color="primary" 
+                onClick={handleClick}
+            >
+                Whisperleaf
+            </Typography>
         </Container>
-        </>
     )
 }
 

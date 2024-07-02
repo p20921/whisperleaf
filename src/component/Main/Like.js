@@ -38,10 +38,10 @@ function LikeComponent(props) {
     }, [like])
 
     return (
-        <Container>
+        <Container style={{ marginTop: 50 }}>
             <Box style={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                 {
-                    isLike ? <FavoriteIcon color="secondary" style={{ cursor: 'pointer' }} onClick={handleClick} /> : <FavoriteBorderIcon color="action" style={{ cursor: 'pointer' }} onClick={handleClick} />
+                    isLike ? <FavoriteIcon fontSize="large" color="secondary" style={{ cursor: 'pointer' }} onClick={handleClick} /> : <FavoriteBorderIcon fontSize="large" color="action" style={{ cursor: 'pointer' }} onClick={handleClick} />
                 }
                 <Typography variant="caption" color="textSecondary">{likeCount ? `+ ${likeCount}` : ''}</Typography>
             </Box>

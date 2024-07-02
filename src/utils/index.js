@@ -105,3 +105,7 @@ export function isCanService() {
 export function handleDisabledRightClick(e) {
     e.preventDefault()
 }
+
+export function getCapitalize(s) {
+    return s.split(" ").map(v => v.charAt(0).toUpperCase() + v.substring(1).toLowerCase()).join(" ");
+}

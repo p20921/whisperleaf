@@ -18,8 +18,8 @@ function CommentItemComponent(props) {
                 </Box>
             </div>
             <div style={{ flex: 1 }}>
-                <Typography variant="caption" color="textSecondary" component="div" gutterBottom style={{ fontSize: 9 }}>{moment(wdate).calendar()}</Typography> 
-                <Typography variant="body2" style={{ fontSize: 11 }}>{HtmlParser(content.replaceAll('\n', '<br />'))}</Typography>
+                <Typography variant="caption" color="textSecondary" component="div"  style={{ fontSize: 9 }}>{moment(wdate).calendar()}</Typography> 
+                <Typography variant="body2" style={{ fontSize: 14 }}>{HtmlParser(content.replaceAll('\n', '<br />'))}</Typography>
             </div>
             <div>
                 {

@@ -48,9 +48,8 @@ dbSlave.Sequelize = Sequelize
 //db.User = user(sequelize, Sequelize)
 
 //모델간의 관계를 정의한다.
-//db.User.hasMany(db.Comment, { foreignKey: 'commenter', sourceKey: 'id' });
-//db.Comment.belongsTo(db.User, { foreignKey: 'commenter', targetKey: 'id' });
 
+dbSlave['item'].belongsTo(dbSlave['comment'], {foreignKey: 'item_id', targetKey: 'item_id'})
 
 export  { sequelize, sequelizeSlave, dbSlave }
 export default db

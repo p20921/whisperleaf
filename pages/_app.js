@@ -26,7 +26,7 @@ class _App extends App {
         return ( 
             <>
                 <Head>
-                    <title>World Newss</title>
+                    <title>Whisperleaf</title>
                 </Head>
                 <MThemeProvider theme={theme}>
                     <Component countryCode={countryCode} {...pageProps} />

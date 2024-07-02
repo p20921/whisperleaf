@@ -1,5 +1,5 @@
 import Divider from '@material-ui/core/Divider'
-import { getParams } from '../index'
+import { getParams } from '../../index'
 import Logo from 'component/Main/Logo'
 import Tab from 'component/Main/Tab'
 import Search from 'component/Main/Search'
@@ -9,29 +9,34 @@ import Body from 'component/Main/Body'
 import Like from 'component/Main/Like'
 import CommentInput from 'component/Main/CommentInput'
 import CommentList from 'component/Main/CommentList'
+import Header from 'component/Header'
 
 function Content(props) {
     const { rows, count, category, row  } = props
 
-    const { item_id, subject, content, love, wdate } = row
+    const { item_id, subject, content, thumbnail, description, keywords, love, wdate } = row
+
+    const title = `Whisperleaf | ${subject}`
 
     return (
         <>
             <header>
-               
+                <Header title={title} description={description} keywords={keywords} />  
             </header>
             <main>
-                <Logo />
-                <Tab category={category} />
-                <Search  />
-                <Subject subject={subject} wdate={wdate} />
-                <Body content={content} />
-                <Like item_id={item_id} like={love} />
-                <CommentInput item_id={item_id} />
-                <CommentList item_id={item_id} />
-                <div style={{ height: 60 }}></div>
-                <Divider />
-                <List rows={rows} count={count} />
+                <div id="main">                
+                    <Logo />
+                    <Tab category={category} />
+                    <Search category={category} />
+                    <Subject subject={subject} wdate={wdate} rand={Math.random()} />
+                    <Body content={content} thumbnail={thumbnail} subject={subject} />
+                    <Like item_id={item_id} like={love} />
+                    <CommentInput item_id={item_id} />
+                    <CommentList item_id={item_id} />
+                    <div style={{ height: 60 }}></div>
+                    <Divider />
+                    <List category={category} rows={rows} count={count} item_id={item_id} />
+                </div>
             </main>
             <footer>
        
@@ -55,13 +60,25 @@ export const getServerSideProps = async (context) => {
 
         const { row } = await body.json()
 
+
+        if (!row) {
+            // Redirect to the login page
+            return {
+                redirect: {
+                    destination: '/',
+                    permanent: false,
+                },
+            };
+        }
+    
         return {
             props: { rows, count, category: params.category, row }
         }
 
     } catch(e) {
+  
         res.setHeader('Location', '/')
-        res.statusCode = 302
+   
         res.end()
     }
 }

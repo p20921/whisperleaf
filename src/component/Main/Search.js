@@ -8,6 +8,7 @@ import Divider from '@material-ui/core/Divider'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import SearchIcon from '@material-ui/icons/Search'
+import CloseIcon from '@material-ui/icons/Close'
 import DirectionsIcon from '@material-ui/icons/Directions'
 
 const useStyles = makeStyles((theme) => ({
@@ -15,9 +16,12 @@ const useStyles = makeStyles((theme) => ({
         padding: '2px 4px',
         display: 'flex',
         alignItems: 'center',
-        width: 365,
+        width: 575,
         margin: '0 auto',
-        marginTop: 30
+        marginTop: 30,
+        [theme.breakpoints.down('xs')]: {
+            width: '100%'
+        }
     },
     input: {
         marginLeft: theme.spacing(1),
@@ -33,13 +37,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function CustomizedInputBase() {
+export default function CustomizedInputBase(props) {
+    const { category } = props
+
     const classes = useStyles()
 
     const router = useRouter()
 
     const { query, push } = router
-    const { category, search } = query
+    const { search } = query
 
     const [ newSearch, setNewSearch ] = useState(search || '')
 
@@ -52,9 +58,14 @@ export default function CustomizedInputBase() {
         push(`/?category=${category || ''}&startpoint=0&search=${newSearch}`)
     }
 
+    const handleClose = () => {
+        setNewSearch('')
+        push(`/?category=${category || ''}&startpoint=0&search=`)
+    }
+
     return (
         <Container>
-            <Paper component="form" className={classes.root}>
+            <Paper className={classes.root}>
                 <InputBase
                     value={newSearch}
                     className={classes.input}
@@ -63,6 +74,13 @@ export default function CustomizedInputBase() {
                     onKeyUp={(e) => e.keyCode === 13 && handleSubmit()}
                     onChange={handleChange}
                 />
+                {
+                    newSearch && (
+                        <IconButton className={classes.iconButton} aria-label="search" onClick={handleClose}>
+                            <CloseIcon />
+                        </IconButton>
+                    )
+                }   
                 <IconButton className={classes.iconButton} aria-label="search" onClick={handleSubmit}>
                     <SearchIcon />
                 </IconButton>

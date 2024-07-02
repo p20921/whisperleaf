@@ -48,9 +48,7 @@ a {
 }
 
 ul, ol {
-	list-style-position: outside;
-	padding: 0;
-	margin: 0;
+	line-height: 155%;
 }
 
 /* 스크롤 스타일 줄때*/ 
@@ -62,4 +60,12 @@ ul, ol {
 	background-color: #ced4da;
 	outline: 0;
 	border-radius: 2px;
+}
+
+section + section {
+	margin-top: 60px;
+}
+
+.Content li + li {
+	margin-top: 10px;
 }
