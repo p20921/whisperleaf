@@ -21,7 +21,7 @@ function Content(props) {
     return (
         <>
             <header>
-                <Header title={title} description={description} keywords={keywords} />  
+                <Header title={title} description={description} keywords={keywords} thumbnail={thumbnail} />  
             </header>
             <main>
                 <div id="main">                

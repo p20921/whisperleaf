@@ -1,5 +1,5 @@
 {
-  "name": "survey-www",
+  "name": "whisperleaf",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -36,7 +36,7 @@
     "redux-logger": "3.0.6",
     "sequelize": "^6.6.2",
     "styled-components": "5.2.1",
-    "uuid": "^10.0.0"
+    "uuid": "9.0.1"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.22.0",

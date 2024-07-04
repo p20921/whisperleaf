@@ -23,10 +23,12 @@ function Home(props) {
     const description = "Whisperleaf: Your ultimate guide to money management, lifestyle enhancements, effective parenting, delicious food recipes, and health tips. Explore expert advice, practical tips, and resources to enrich your life."
     const keywords = "Whisperleaf, money management, personal finance, budgeting, saving, investing, lifestyle tips, parenting advice, child care, recipes, cooking tips, healthy eating, health tips, wellness, fitness, mental health, balanced living"
 
+    const thumbnail = `${process.env.ORIGIN}/logo.png`
+
     return (
         <>
             <header>
-                <Header title={title} description={description} keywords={keywords} />  
+                <Header title={title} description={description} keywords={keywords} thumbnail={thumbnail} />  
             </header>
             <main>
                 <Logo />

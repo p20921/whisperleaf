@@ -3,9 +3,11 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 function HeaderComponent(props) {
-    const { title, keywords, description } = props
+    const { thumbnail, title, keywords, description } = props
 
     const router = useRouter()
+
+    const [ path ] = router.asPath.split('?')
 
     return (
         <Head>
@@ -19,8 +21,8 @@ function HeaderComponent(props) {
             <meta property="og:locale" content="en_US"/>
             <meta property="og:locale:alternate" content="en_US"/>
             <meta property="og:title" content={title}/>
-            <meta property="og:image" content={`${process.env.NEXT_PUBLIC_IMG_ORIGIN}/server/og-logo.png?1`}/>
-            <meta property="og:url" content={`${process.env.NEXT_PUBLIC_WWW_ORIGIN}${router.pathname}`}/>
+            <meta property="og:image" content={thumbnail}/>
+            <meta property="og:url" content={`${process.env.NEXT_PUBLIC_WWW_ORIGIN}${path}`}/>
             <meta property="og:type" content="website"/>
             <meta name="twitter:title" content={title}/>
             <meta name="twitter:description" content={description}/>
