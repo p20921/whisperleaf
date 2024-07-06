@@ -26,6 +26,7 @@ function HeaderComponent(props) {
             <meta property="og:type" content="website"/>
             <meta name="twitter:title" content={title}/>
             <meta name="twitter:description" content={description}/>
+            <meta name="google-adsense-account" content="ca-pub-2677225610510516" />
         </Head>
     )
 }
