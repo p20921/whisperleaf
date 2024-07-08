@@ -6,9 +6,9 @@ import { appWithTranslation } from 'next-i18next'
 import { ThemeProvider as MThemeProvider } from '@material-ui/core/styles'
 import wrapper from 'reducer/configureStore'
 import theme from '../src/theme'
+import * as gtag from 'lib/gtag'
 import '../styles/globals.css'
 import '../styles/Animate.css'
-
 
 class _App extends App { 
     componentDidMount() { 
@@ -18,8 +18,18 @@ class _App extends App {
         if (jssStyles) { 
             jssStyles.parentNode.removeChild(jssStyles)
         }
+
+        Router.events.on('routeChangeComplete', this.handleRouteChange);
     } 
+
+    componentWillUnmount() {
+        Router.events.off('routeChangeComplete', this.handleRouteChange);
+    }
     
+    handleRouteChange = (url) => {
+        gtag.pageview(url);
+    };
+
     render() { 
         const { Component, pageProps, countryCode } = this.props
     
