@@ -29,7 +29,7 @@ export default function PaginationButtons(props) {
 
     return (
         <div className={classes.root}>
-        <Pagination onChange={handleChange} count={Math.ceil(count / 10)} page={startpoint ? Number(startpoint) + 1 : 1} showFirstButton showLastButton color="primary" />
+        <Pagination onChange={handleChange} count={Math.ceil(count / 12)} page={startpoint ? Number(startpoint) + 1 : 1} showFirstButton showLastButton color="primary" />
         </div>
     );
 }

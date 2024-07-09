@@ -5,6 +5,7 @@ import Tab from 'component/Main/Tab'
 import Search from 'component/Main/Search'
 import List from 'component/Main/List'
 import Header from 'component/Header'
+import Footer from 'component/Footer'
 
 export const getParams = (props) => {
     const { category, startpoint, search } = props
@@ -37,7 +38,7 @@ function Home(props) {
                 <List category={category} rows={rows} count={count} />
             </main>
             <footer>
-    
+                <Footer />
             </footer>
         </>
     )

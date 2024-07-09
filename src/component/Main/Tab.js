@@ -140,16 +140,6 @@ function Main1(props) {
                     Lifestyle
                 </Button>
                 <Button 
-                    disableElevation={category === 'Food'}
-                    startIcon={xs ? null : <FastfoodIcon />}
-                    className={classes.food} 
-                    size={xs ? 'small' : 'medium'} 
-                    variant="contained" 
-                    onClick={() => handleChange('Food')}
-                >
-                    Food
-                </Button>
-                <Button 
                     disableElevation={category === 'Health'}
                     startIcon={xs ? null : <DirectionsRunIcon />}
                     className={classes.health} 
@@ -159,6 +149,17 @@ function Main1(props) {
                 >
                     Health
                 </Button>
+                <Button 
+                    disableElevation={category === 'Food'}
+                    startIcon={xs ? null : <FastfoodIcon />}
+                    className={classes.food} 
+                    size={xs ? 'small' : 'medium'} 
+                    variant="contained" 
+                    onClick={() => handleChange('Food')}
+                >
+                    Food
+                </Button>
+               
              
                 <Button 
                    disableElevation={category === 'Parenting'}

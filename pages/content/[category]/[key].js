@@ -10,6 +10,7 @@ import Like from 'component/Main/Like'
 import CommentInput from 'component/Main/CommentInput'
 import CommentList from 'component/Main/CommentList'
 import Header from 'component/Header'
+import Footer from 'component/Footer'
 
 function Content(props) {
     const { rows, count, category, row  } = props
@@ -39,7 +40,7 @@ function Content(props) {
                 </div>
             </main>
             <footer>
-       
+                <Footer />
             </footer>
         </>
     )

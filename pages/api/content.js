@@ -10,7 +10,7 @@ export default async(req, res) => {
 
     const { pathname, category } = req.query
 
-    let where = { kind: category, pathname }
+    let where = { kind: category, open: true, pathname }
 
 	try {
         const resItem = await itemSlave.findOne({

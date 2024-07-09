@@ -30,6 +30,30 @@ module.exports = function(sequelize, DataTypes) {
     pathname: {
       type: DataTypes.STRING(100),
       allowNull: true
+    },
+    description: {
+      type: DataTypes.STRING(1000),
+      allowNull: true,
+      defaultValue: ""
+    },
+    keywords: {
+      type: DataTypes.STRING(500),
+      allowNull: true,
+      defaultValue: ""
+    },
+    thumbnail: {
+      type: DataTypes.STRING(1000),
+      allowNull: true,
+      defaultValue: ""
+    },
+    summary: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    open: {
+      type: DataTypes.TINYINT.UNSIGNED,
+      allowNull: true,
+      defaultValue: 1
     }
   }, {
     sequelize,
