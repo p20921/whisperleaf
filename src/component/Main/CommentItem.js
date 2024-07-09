@@ -14,7 +14,7 @@ function CommentItemComponent(props) {
         <Box style={{ display: 'flex', gap: 20, marginTop: 20 }}>
             <div>
                 <Box style={{ borderRadius: 20, background: oc.green[3], fontSize: 11, padding: 8 }}>
-                    {name}
+                    {name.replace(/->/g, '').replace(/-/g, '').substr(0, 10)}
                 </Box>
             </div>
             <div style={{ flex: 1 }}>
