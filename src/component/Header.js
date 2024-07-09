@@ -27,6 +27,7 @@ function HeaderComponent(props) {
             <meta name="twitter:title" content={title}/>
             <meta name="twitter:description" content={description}/>
             <meta name="google-adsense-account" content="ca-pub-2677225610510516" />
+            <meta name="google-adsense-account" content="ca-pub-2677225610510516" />
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2677225610510516" crossorigin="anonymous"></script>
         </Head>
     )
