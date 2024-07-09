@@ -19,13 +19,13 @@ function Footer(props) {
                 xs ? (
                     <Typography variant="body2" color="textSecondary" style={{ lineHeight: '165%' }}>
                     {
-                        HtmlParser(`<span style="text-shadow: 1px 1px 3px #A8A684; color: #8A8667;">Whisperleaf</span><br /><a href="mailto:makejday@gmail.com" style="text-decoration: underline; color: ${oc.gray[5]};">makejday@gmail.com</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="${process.env.NEXT_PUBLIC_ORIGIN}/cookie_policy" target="_blank"  style="text-decoration: underline; color: ${oc.gray[5]};">Cookie Policy</a>`)
+                        HtmlParser(`<span style="text-shadow: 1px 1px 3px #A8A684; color: #8A8667;">Whisperleaf</span><br /><a href="mailto:makejday@gmail.com" style="text-decoration: underline; color: ${oc.gray[5]};">makejday@gmail.com</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="${process.env.NEXT_PUBLIC_ORIGIN}/cookie_policy" target="_blank"  style="text-decoration: underline; color: ${oc.gray[5]};">Cookie Policy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="${process.env.NEXT_PUBLIC_ORIGIN}/privacy_policy" target="_blank"  style="text-decoration: underline; color: ${oc.gray[5]};">Privacy Policy</a>`)
                     }
                     </Typography>
                 ) : (
                     <Typography variant="body2" color="textSecondary"  style={{ lineHeight: '165%' }}>
                         {
-                            HtmlParser(`<span style="text-shadow: 1px 1px 3px #A8A684; color: #8A8667;">Whisperleaf</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="mailto:makejday@gmail.com"  style="text-decoration: underline; color: ${oc.gray[6]};">makejday@gmail.com</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="${process.env.NEXT_PUBLIC_ORIGIN}/cookie_policy" target="_blank"  style="text-decoration: underline; color: ${oc.gray[6]};">Cookie Policy</a>`)
+                            HtmlParser(`<span style="text-shadow: 1px 1px 3px #A8A684; color: #8A8667;">Whisperleaf</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="mailto:makejday@gmail.com"  style="text-decoration: underline; color: ${oc.gray[6]};">makejday@gmail.com</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="${process.env.NEXT_PUBLIC_ORIGIN}/cookie_policy" target="_blank"  style="text-decoration: underline; color: ${oc.gray[6]};">Cookie Policy</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="${process.env.NEXT_PUBLIC_ORIGIN}/privacy_policy" target="_blank"  style="text-decoration: underline; color: ${oc.gray[6]};">Privacy Policy</a>`)
                         }
                     </Typography>
                 )
