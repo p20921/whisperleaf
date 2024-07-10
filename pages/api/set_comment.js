@@ -15,7 +15,8 @@ export default async(req, res) => {
             comment_id,
             item_id,
             name,
-            content
+            content,
+            auto: false
         })
 
         res.json({ id: comment_id })

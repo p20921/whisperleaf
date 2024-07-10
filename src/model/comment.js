@@ -22,6 +22,11 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: Sequelize.Sequelize.literal('CURRENT_TIMESTAMP')
+    },
+    auto: {
+      type: DataTypes.TINYINT.UNSIGNED,
+      allowNull: true,
+      defaultValue: 1
     }
   }, {
     sequelize,
@@ -34,6 +39,13 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "comment_id" },
+        ]
+      },
+      {
+        name: "item_id",
+        using: "BTREE",
+        fields: [
+          { name: "item_id" },
         ]
       },
     ]
