@@ -21,7 +21,7 @@ function Home(props) {
     const { rows, count, category  } = props
 
     const title = "Whisperleaf"
-    const description = "Whisperleaf: Your ultimate guide to money management, lifestyle enhancements, effective parenting, delicious food recipes, and health tips. Explore expert advice, practical tips, and resources to enrich your life."
+    const description = "Your guide to finance, lifestyle, parenting, recipes, and health for a richer life."
     const keywords = "Whisperleaf, money management, personal finance, budgeting, saving, investing, lifestyle tips, parenting advice, child care, recipes, cooking tips, healthy eating, health tips, wellness, fitness, mental health, balanced living"
 
     const thumbnail = `${process.env.ORIGIN}/logo.png?123`
