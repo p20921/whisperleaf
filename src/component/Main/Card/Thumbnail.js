@@ -14,7 +14,7 @@ function ThumbnailComponent(props) {
 
     const classes = useStyles()
 
-    return <CardMedia className={classes.media} image={thumbnail} title={subject} component="div" />
+    return <CardMedia className={classes.media} image={thumbnail} title={subject} component="div" alt={subject} />
 }
 
 export default memo(ThumbnailComponent)
