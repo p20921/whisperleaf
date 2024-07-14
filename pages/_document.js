@@ -51,7 +51,6 @@ class _Document extends Document {
 			<Html lang={this.props.locale || 'ko'} dir="ltr">
 
 				<Head>
-					<link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet"/>
 					<meta charSet="utf-8"/>	
 					<script
 					async
