@@ -30,7 +30,7 @@ function Content(props) {
                     <Tab category={category} />
                     <Search category={category} />
                     <Subject subject={subject} wdate={wdate} rand={Math.random()} />
-                    <Body content={content} thumbnail={thumbnail} subject={subject} />
+                    <Body subject={subject} content={content} thumbnail={thumbnail} subject={subject} />
                     <Like item_id={item_id} like={love} />
                     <CommentInput item_id={item_id} />
                     <CommentList item_id={item_id} />
