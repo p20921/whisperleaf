@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 function BodyComponent(props) {
-    const { thumbnail, content } = props
+    const { subject, thumbnail, content } = props
 
     const classes = useStyles({ thumbnail })
 
@@ -40,6 +40,7 @@ function BodyComponent(props) {
     return (
         <Container style={{ marginTop: 30, marginBottom: 10 }}>
             <Box className={classes.cover} />
+            <img src={thumbnail} alt={subject}  style={{ maxWidth: '100%' }} />
             <Typography component="div" className="Content"  style={{ color: oc.gray[7], minHeight: 100, wordBreak: 'break-all' }}>{HtmlParser(newContent)}</Typography>
         </Container>
     )
