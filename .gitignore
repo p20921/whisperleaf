@@ -31,6 +31,10 @@ yarn-error.log*
 /public/sitemap.xml
 /public/robots.txt
 
+
+/public/ads.txt
+/public/sitemap.xml.bak
+
 # local env files
 
 /log
