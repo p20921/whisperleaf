@@ -147,7 +147,7 @@ function Main1(props) {
                     variant="contained"
                     onClick={() => handleChange('Health')}
                 >
-                    Health
+                    Wellness
                 </Button>
                 <Button 
                     disableElevation={category === 'Food'}
